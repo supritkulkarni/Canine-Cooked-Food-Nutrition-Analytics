@@ -24,3 +24,10 @@ The project is designed to mirror a modern analytics workflow (similar to dbt-st
 3. Brand comparisons
 
 4. Nutrition scoring
+
+The dataset is inspired by publicly available nutritional information for UK cooked dog foods from:
+
+🔗 https://www.thebalancedcanine.co.uk/uk-cooked-foods
+
+The dataset has been cleaned, structured, and extended for educational and analytics demonstration purposes.
+The Balanced Canine is not affiliated with or endorsing this project.
