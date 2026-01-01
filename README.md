@@ -31,3 +31,5 @@ The dataset is inspired by publicly available nutritional information for UK coo
 
 The dataset has been cleaned, structured, and extended for educational and analytics demonstration purposes.
 The Balanced Canine is not affiliated with or endorsing this project.
+
+## Attribution Notice Nutritional reference values are adapted from publicly available information provided by The Balanced Canine. All transformations, modelling, and analysis are original work by Suprit Kulkarni.
