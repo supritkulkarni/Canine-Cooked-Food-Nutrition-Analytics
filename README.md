@@ -1,35 +1,178 @@
-# Canine-Cooked-Food-Nutrition-Analytics
-This project analyses cooked dog‑food products available in the UK, focusing on their nutritional composition, ingredient quality, and brand‑level differences. It demonstrates how raw nutrition data can be transformed into clean, reliable, analytics‑ready datasets using Python, SQL, and analytics engineering best practices.
+# Canine Cooked Food Nutrition Analytics
+Python • SQL • SQLite • Data Modelling • EDA
 
-The project is designed to mirror a modern analytics workflow (similar to dbt-style modelling), including:
+This project analyses cooked dog‑food products available in the UK, focusing on brand‑level differences, pricing patterns, protein options, and availability. It demonstrates how raw product data can be transformed into clean, analytics‑ready datasets using Python, SQL, and a lightweight analytics‑engineering workflow.
 
+The project mirrors a modern dbt‑style modelling approach, including:
 - Data ingestion and cleaning
+- SQL data modelling (staging → intermediate → mart)
+- Derived brand‑level metrics
+- Exploratory data analysis
+- Reproducible, script‑based workflow
 
-- Data quality checks
+The dataset is inspired by publicly available information from:
+https://www.thebalancedcanine.co.uk/uk-cooked-foods
 
-- SQL data modelling
-
-- Derived nutrition metrics
-
-- Brand‑level insights
-
-- Documentation and reproducibility
-
-**Exploratory Data Analysis**
-
-1. Macro distribution
-
-2. Ingredient patterns
-
-3. Brand comparisons
-
-4. Nutrition scoring
-
-The dataset is inspired by publicly available nutritional information for UK cooked dog foods from:
-
-🔗 https://www.thebalancedcanine.co.uk/uk-cooked-foods
-
-The dataset has been cleaned, structured, and extended for educational and analytics demonstration purposes.
+This project is for educational and analytics demonstration purposes only.
 The Balanced Canine is not affiliated with or endorsing this project.
 
-## Attribution Notice Nutritional reference values are adapted from publicly available information provided by The Balanced Canine. All transformations, modelling, and analysis are original work by Suprit Kulkarni.
+---
+
+## Project Structure
+
+canine-cooked-food-nutrition-analytics % tree -L 2
+.
+├── LICENSE
+├── README.md
+├── data
+│   ├── UK_Canine_Cooked_Foods.csv
+│   └── canine_nutrition.db
+├── notebooks
+├── plots
+│   ├── availability.png
+│   ├── price_segments.png
+│   └── protein_offerings.png
+├── requirements.txt
+├── sql
+│   ├── 01_stg_uk_cooked_foods.sql
+│   ├── 02_int_uk_cooked_foods_metrics.sql
+│   └── 03_mart_uk_cooked_foods_brand_summary.sql
+├── src
+│   ├── eda_uk_cooked_foods.py
+│   └── etl_uk_cooked_foods.py
+└── venv
+    ├── bin
+    ├── etc
+    ├── include
+    ├── lib
+    ├── pyvenv.cfg
+    └── share
+
+12 directories, 14 files
+
+
+---
+
+## Tech Stack
+
+- Python
+- Pandas
+- SQLAlchemy
+- SQLite
+- SQL
+- Matplotlib
+- Seaborn
+- Git & GitHub
+
+---
+
+# How to Run This Project Locally
+
+## 1. Clone the Repository
+
+git clone git@github.com:supritkulkarni/Canine-Cooked-Food-Nutrition-Analytics.git
+cd Canine-Cooked-Food-Nutrition-Analytics
+
+
+## 2. Create and Activate a Virtual Environment
+
+python3 -m venv venv
+source venv/bin/activate
+
+
+## 3. Install Dependencies
+
+pip install -r requirements.txt
+
+
+## 4. Run the ETL Pipeline
+
+This script:
+- Loads the CSV
+- Cleans column names
+- Creates boolean flags
+- Writes uk_cooked_foods_raw into canine_nutrition.db
+
+Run:
+
+python3 src/etl_uk_cooked_foods.py
+
+
+Expected output:
+
+Loaded 8 rows into uk_cooked_foods_raw
+
+
+---
+
+## 5. Apply SQL Models
+
+Run each SQL file against the SQLite database:
+
+sqlite3 data/canine_nutrition.db < sql/01_stg_uk_cooked_foods.sql
+sqlite3 data/canine_nutrition.db < sql/02_int_uk_cooked_foods_metrics.sql
+sqlite3 data/canine_nutrition.db < sql/03_mart_uk_cooked_foods_brand_summary.sql
+
+
+Verify:
+
+sqlite3 data/canine_nutrition.db ".tables"
+
+
+You should see:
+- uk_cooked_foods_raw
+- stg_uk_cooked_foods
+- int_uk_cooked_foods_metrics
+- mart_uk_cooked_foods_brand_summary
+
+---
+
+## 6. Run the EDA Script
+
+This script:
+- Loads all SQL views
+- Prints summaries
+- Generates plots into /plots
+
+Run:
+
+python3 src/eda_uk_cooked_foods.py
+
+
+Plots will appear in:
+
+plots/
+
+
+---
+
+# Key Insights
+
+- Premium brands (e.g., Butternut Box, Monty’s Larder) consistently fall into the premium price segment.
+- Mid‑range brands offer both multiple‑protein and single‑protein options.
+- Online‑only brands dominate the dataset, reflecting a strong direct‑to‑consumer trend.
+- Brands offering multiple proteins appear more frequently in mid‑range and premium categories.
+- Minimum order requirements vary widely, from flexible “Not Stated” to fixed thresholds like 5kg or £25.
+
+---
+
+# Attribution Notice
+
+Nutritional reference values and product information are adapted from publicly available sources provided by The Balanced Canine.
+All transformations, modelling, and analysis are original work by Suprit Kulkarni.
+
+---
+
+# License
+
+This project is licensed under the MIT License.
+
+---
+
+# Author
+
+Suprit Kulkarni aka N3ur0n
+Analytics Engineering • Python • SQL • Data Modelling
+GitHub: https://github.com/supritkulkarni
+
+
