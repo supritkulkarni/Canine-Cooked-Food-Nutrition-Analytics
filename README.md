@@ -20,34 +20,24 @@ The Balanced Canine is not affiliated with or endorsing this project.
 
 ## Project Structure
 
-canine-cooked-food-nutrition-analytics % tree -L 2
-.
-├── LICENSE
-├── README.md
-├── data
-│   ├── UK_Canine_Cooked_Foods.csv
-│   └── canine_nutrition.db
-├── notebooks
-├── plots
-│   ├── availability.png
-│   ├── price_segments.png
-│   └── protein_offerings.png
+canine-cooked-food-nutrition-analytics/
+├── data/
+│   ├── UK_Canine_Cooked_Foods.csv
+│   └── canine_nutrition.db
+├── plots/
+│   ├── price_segments.png
+│   ├── availability.png
+│   └── protein_offerings.png
+├── src/
+│   ├── etl_uk_cooked_foods.py
+│   └── eda_uk_cooked_foods.py
+├── sql/
+│   ├── 01_stg_uk_cooked_foods.sql
+│   ├── 02_int_uk_cooked_foods_metrics.sql
+│   └── 03_mart_uk_cooked_foods_brand_summary.sql
 ├── requirements.txt
-├── sql
-│   ├── 01_stg_uk_cooked_foods.sql
-│   ├── 02_int_uk_cooked_foods_metrics.sql
-│   └── 03_mart_uk_cooked_foods_brand_summary.sql
-├── src
-│   ├── eda_uk_cooked_foods.py
-│   └── etl_uk_cooked_foods.py
-└── venv
-    ├── bin
-    ├── etc
-    ├── include
-    ├── lib
-    ├── pyvenv.cfg
-    └── share
-
+├── LICENSE
+└── README.md
 12 directories, 14 files
 
 
@@ -71,12 +61,14 @@ canine-cooked-food-nutrition-analytics % tree -L 2
 ## 1. Clone the Repository
 
 git clone git@github.com:supritkulkarni/Canine-Cooked-Food-Nutrition-Analytics.git
+
 cd Canine-Cooked-Food-Nutrition-Analytics
 
 
 ## 2. Create and Activate a Virtual Environment
 
 python3 -m venv venv
+
 source venv/bin/activate
 
 
@@ -110,7 +102,9 @@ Loaded 8 rows into uk_cooked_foods_raw
 Run each SQL file against the SQLite database:
 
 sqlite3 data/canine_nutrition.db < sql/01_stg_uk_cooked_foods.sql
+
 sqlite3 data/canine_nutrition.db < sql/02_int_uk_cooked_foods_metrics.sql
+
 sqlite3 data/canine_nutrition.db < sql/03_mart_uk_cooked_foods_brand_summary.sql
 
 
@@ -172,7 +166,9 @@ This project is licensed under the MIT License.
 # Author
 
 Suprit Kulkarni aka N3ur0n
-Analytics Engineering • Python • SQL • Data Modelling
+
+• Python • SQL • Data Modelling
+
 GitHub: https://github.com/supritkulkarni
 
 
