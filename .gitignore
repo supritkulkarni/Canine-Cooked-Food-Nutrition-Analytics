@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+
+# macOS
+.DS_Store
+
+# SQLite database
+*.db
+
+# Plots and generated images
+plots/
+
+# Jupyter checkpoints (if you ever add notebooks)
+.ipynb_checkpoints/
+
+# Environment files
+.env
+*.env

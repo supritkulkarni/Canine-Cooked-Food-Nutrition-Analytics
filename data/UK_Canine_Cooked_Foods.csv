@@ -1,0 +1,9 @@
+id,brand,price_500g_raw,price_1kg_raw,minimum_order_raw,website,has_multiple_proteins,single_protein_options,availability,notes
+1,Different Dog,"£4.16* - £6.66**","250g* min/600g** max","1.5kg","https://shop.differentdog.com",,,"Online only",""
+2,Marley Bones Dog Dining,"£3.18 per 390g pack","390g Only","Not Stated","https://marleybones.com",,,"Online only",""
+3,Poppys Picnic (Power B),"£2.80 to £3.80","(only sell 450g)","4kg","https://poppyspicnic.co.uk",,,"Online only",""
+4,Boost Pet,"£3.15 to £4.00 per 400g","400g only","6kg","https://boostpet.co.uk","Yes","Some","Available in store (Sainsbury's)",""
+5,Years,"£3.15","Custom Portion Sizes","Not Stated","https://www.years.co.uk","Yes","Some","Available online only","Pack sizes and prices can vary"
+6,Nutriment Steamed,"£2.80 per 395g","395g Only","5kg","https://www.nutriment.co.uk","Yes","Some","Direct and from stockists","Shelf stable option"
+7,Butternut Box,"£4.96","500g Only","5kg","https://butternutbox.com","Yes","Some","Online only","Tailored meal plans"
+8,Montys Larder,"£4.85 to £4.95 per 400g","£8.65 to £9.15","£25.00","https://montyslarder.com","Yes","Some","Online only","Contains white potatoes"
